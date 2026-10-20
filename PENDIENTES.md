@@ -4,7 +4,7 @@ Ningún dato de esta lista fue inventado: el sitio oculta lo que falta o lo marc
 
 ## Imprescindibles
 
-- [ ] **Correos del formulario**: crear la casilla en cPanel y completar `CONTACT_TO` y `CONTACT_FROM` en `public/enviar-contacto.php`. Sin esto, el formulario informa que el mensaje *no* se envió.
+- [x] **Correos del formulario**: crear la casilla en cPanel y completar `CONTACT_TO` y `CONTACT_FROM` en `public/enviar-contacto.php`. Sin esto, el formulario informa que el mensaje *no* se envió.
 - [ ] **Probar el formulario en el hosting**: el PHP no pudo ejecutarse en el equipo de desarrollo. Envía una solicitud real y confirma que llega (revisa también la carpeta de spam).
 - [ ] **Entregabilidad**: en cPanel → *Email Deliverability*, SPF y DKIM en verde; certificado SSL activo (*AutoSSL*).
 - [ ] **Política de privacidad**: el texto base está en `src/components/PrivacyDialog.tsx` y debe pasar por revisión legal (Ley 19.628 y sus modificaciones; considera la Ley 21.719 sobre protección de datos personales).

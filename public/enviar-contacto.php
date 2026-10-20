@@ -5,15 +5,15 @@
  * Recibe el formulario por POST, lo valida y lo envía por correo con mail().
  * Responde JSON: { "success": bool, "message": string, "errors"?: { campo: mensaje } }
  *
- * CONFIGURACIÓN PENDIENTE: completa los dos correos de abajo.
+ * Configuración de correos:
  *  - CONTACT_TO:   casilla que recibe las solicitudes.
  *  - CONTACT_FROM: casilla creada en cPanel en el MISMO dominio (ej. contacto@cumbresdev.cl),
  *                  necesaria para que el correo no sea rechazado como spam (SPF/DKIM).
  * Mientras estén vacíos, el formulario informa que el envío no está disponible.
  */
 
-const CONTACT_TO = '';      // PENDIENTE, ej. 'contacto@cumbresdev.cl'
-const CONTACT_FROM = '';    // PENDIENTE, ej. 'contacto@cumbresdev.cl'
+const CONTACT_TO = 'contacto@cumbresdev.cl';
+const CONTACT_FROM = 'contacto@cumbresdev.cl';
 const CONTACT_FROM_NAME = 'CumbresDev';
 
 const MIN_FILL_SECONDS = 3;      // envíos más rápidos se consideran automáticos
