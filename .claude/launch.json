@@ -1,0 +1,23 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "cumbresdev-dev",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev"],
+      "port": 3000
+    },
+    {
+      "name": "cumbresdev-out",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["--yes", "serve@14.2.4", "out", "-l", "4000"],
+      "port": 4000
+    },
+    {
+      "name": "cumbresdev-subcarpeta",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["--yes", "serve@14.2.4", "C:/Users/gmarguart/AppData/Local/Temp/claude/C--Users-gmarguart-Proyectos-Cumbresdev/0a2719ab-a654-49f4-898b-d92cacd99686/scratchpad/site", "-l", "4001"],
+      "port": 4001
+    }
+  ]
+}
