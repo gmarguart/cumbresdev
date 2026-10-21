@@ -1,0 +1,6 @@
+User-Agent: *
+Allow: /
+Disallow: /enviar-contacto.php
+
+Host: https://cumbresdev.cl
+Sitemap: https://cumbresdev.cl/sitemap.xml

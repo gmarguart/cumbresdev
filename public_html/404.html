@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es-CL">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Página no encontrada | CumbresDev</title>
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#08132b">
+  <!-- Rutas absolutas: Apache muestra esta página desde cualquier URL inexistente. -->
+  <link rel="icon" type="image/png" href="/icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700&display=swap">
+  <link rel="stylesheet" href="/css/styles.css">
+  <style>
+    .not-found {
+      display: grid;
+      min-height: 100vh;
+      min-height: 100dvh;
+      place-items: center;
+      text-align: center;
+    }
+    .not-found .logo {
+      display: flex;
+      width: fit-content;
+      margin: 0 auto 2rem;
+    }
+    .not-found .section-text {
+      margin-bottom: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <main class="section section-dark not-found">
+    <div class="about-bg bg-grid" aria-hidden="true"></div>
+    <div class="container section-heading section-heading--dark section-heading--center">
+      <a href="/" class="logo logo--dark" aria-label="CumbresDev, ir al inicio">
+        <img class="logo-mark" src="/brand/cumbresdev-simbolo.webp" alt="" width="74" height="40">
+        <span class="logo-text">Cumbres<span>Dev</span></span>
+      </a>
+      <p class="eyebrow">Error 404</p>
+      <h1 class="section-title">No encontramos esta página.</h1>
+      <p class="section-text">Es posible que el enlace esté mal escrito o que la página ya no exista.</p>
+      <a href="/" class="btn btn-primary btn-lg">Volver al inicio</a>
+    </div>
+  </main>
+</body>
+</html>

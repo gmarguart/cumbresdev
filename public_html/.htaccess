@@ -1,5 +1,5 @@
 # CumbresDev — configuración Apache para hosting cPanel.
-# Se copia a out/ al compilar; súbelo junto con index.html a public_html.
+# Súbelo junto con index.html a public_html (es un archivo oculto: activa "Mostrar archivos ocultos").
 
 DirectoryIndex index.html index.php
 Options -Indexes
@@ -24,12 +24,12 @@ ErrorDocument 404 /404.html
   Header always set X-Frame-Options "SAMEORIGIN"
   Header always set Permissions-Policy "camera=(), microphone=(), geolocation=()"
 
-  # Recursos con hash en el nombre: caché de larga duración
-  <If "%{REQUEST_URI} =~ m#^/_next/static/#">
-    Header set Cache-Control "public, max-age=31536000, immutable"
-  </If>
-  # HTML: siempre revalidar para publicar cambios de inmediato
-  <FilesMatch "\.html$">
+  # Imágenes: caché de 30 días
+  <FilesMatch "\.(png|jpe?g|webp|svg|ico)$">
+    Header set Cache-Control "public, max-age=2592000"
+  </FilesMatch>
+  # HTML, CSS y JS: siempre revalidar para publicar cambios de inmediato
+  <FilesMatch "\.(html|css|js)$">
     Header set Cache-Control "no-cache"
   </FilesMatch>
 </IfModule>
