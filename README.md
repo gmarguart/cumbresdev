@@ -19,8 +19,22 @@ public_html/                  ← se sube tal cual a public_html en cPanel
 ├─ .htaccess                  HTTPS, redirección www, caché, cabeceras de seguridad, página 404
 ├─ robots.txt · sitemap.xml
 ├─ icon.png · apple-icon.png · og-image.png
-└─ brand/                     Logo: símbolo (.webp/.png) y logo completo con texto
+├─ brand/                     Logo: símbolo (.webp/.png) y logo completo con texto
+└─ img/                       Fotografías (WebP en 800 y 1400 px de ancho)
 ```
+
+### Fotografías
+
+Las fotos de `img/` son de [Unsplash](https://unsplash.com) bajo la *Unsplash License* (uso comercial libre, sin atribución obligatoria). El tono azul de marca se aplica con CSS (`.photo-frame` y `.service-photo` en `css/styles.css`), así que una foto nueva queda con el mismo estilo sin editarla.
+
+| Archivo | Sección | Fuente |
+|---|---|---|
+| `web-*.webp` | Servicio 01 | [Lilly Rum](https://unsplash.com/photos/15YTRXKuJ14) |
+| `software-*.webp` | Servicio 02 | [Jakub Żerdzicki](https://unsplash.com/photos/2DkNX2wVVY4) |
+| `planificacion-*.webp` | Forma de trabajar | [Scott Graham](https://unsplash.com/photos/5fNmWej4tAA) |
+| `estudio-*.webp` | Nosotros | [Jakub Żerdzicki](https://unsplash.com/photos/v-jFS1AsHXo) |
+
+Para cambiar una foto, reemplaza los dos archivos (`-800` y `-1400`) manteniendo el nombre, o cambia la ruta en `index.html`.
 
 ## Editar el sitio
 
