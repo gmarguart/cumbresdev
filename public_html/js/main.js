@@ -87,6 +87,7 @@
   var slider = document.getElementById("inicio");
   var slides = Array.prototype.slice.call(slider.querySelectorAll(".slide"));
   var dots = Array.prototype.slice.call(slider.querySelectorAll(".slider-dot"));
+  var photos = Array.prototype.slice.call(slider.querySelectorAll(".hero-photo"));
   var toggle = slider.querySelector(".slider-toggle");
   var live = slider.querySelector(".slider-live");
   var INTERVAL = Number(slider.dataset.interval) || 5000;
@@ -119,6 +120,7 @@
       slide.classList.toggle("is-active", active);
       slide.setAttribute("aria-hidden", String(!active));
       slide.inert = !active;
+      if (photos[i]) photos[i].classList.toggle("is-active", active);
     });
     dots.forEach(function (dot, i) {
       if (i === index) dot.setAttribute("aria-current", "true");
@@ -246,7 +248,7 @@
 
   var GENERIC_ERROR = "No pudimos enviar tu mensaje. Verifica tu conexión e inténtalo nuevamente.";
   var FIELDS = ["nombre", "empresa", "email", "telefono", "tipo", "descripcion", "presupuesto", "plazo", "consentimiento"];
-  var PROJECT_TYPES = { web: "Página web", software: "Software a medida" };
+  var PROJECT_TYPES = { web: "Página web", software: "Software a medida", consultoria: "Consultoría" };
   var LIMITS = { nombre: 80, empresa: 100, email: 120, descripcionMin: 20, descripcionMax: 3000 };
   var EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
   var PHONE_RE = /^\+?[\d\s()-]{8,20}$/;

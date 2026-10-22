@@ -33,6 +33,11 @@ Las fotos de `img/` son de [Unsplash](https://unsplash.com) bajo la *Unsplash Li
 | `software-*.webp` | Servicio 02 | [Jakub Żerdzicki](https://unsplash.com/photos/2DkNX2wVVY4) |
 | `planificacion-*.webp` | Forma de trabajar | [Scott Graham](https://unsplash.com/photos/5fNmWej4tAA) |
 | `estudio-*.webp` | Nosotros | [Jakub Żerdzicki](https://unsplash.com/photos/v-jFS1AsHXo) |
+| `hero-web-*.webp` | Carrusel, lámina 1 | [path digital](https://unsplash.com/photos/DBZIU619Wj8) |
+| `hero-software-*.webp` | Carrusel, lámina 2 | [Annie Spratt](https://unsplash.com/photos/QckxruozjRg) |
+| `hero-cumbre-*.webp` | Carrusel, lámina 3 | [Hendrik Kespohl](https://unsplash.com/photos/1YQDhLtB9yU) |
+
+Las fotos del carrusel son de fondo y decorativas (`alt=""`): van en `.hero-photos` dentro de `.hero-bg`, una por lámina y en el mismo orden. Su tinte y velo están en `.hero-photos::before` y `::after`.
 
 Para cambiar una foto, reemplaza los dos archivos (`-800` y `-1400`) manteniendo el nombre, o cambia la ruta en `index.html`.
 

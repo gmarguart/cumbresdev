@@ -123,7 +123,8 @@ if (rate_limited($ip)) {
 
 $types = [
     'web' => 'Página web',
-    'software' => 'Software a medida'
+    'software' => 'Software a medida',
+    'consultoria' => 'Consultoría'
 ];
 
 $name = single_line(post_value('nombre', 80));
