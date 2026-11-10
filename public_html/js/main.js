@@ -228,7 +228,7 @@
 
   var GENERIC_ERROR = "No pudimos enviar tu mensaje. Verifica tu conexión e inténtalo nuevamente.";
   var FIELDS = ["nombre", "empresa", "email", "telefono", "tipo", "descripcion", "presupuesto", "plazo", "consentimiento"];
-  var PROJECT_TYPES = { web: "Página web", software: "Software a medida", consultoria: "Consultoría" };
+  var PROJECT_TYPES = { web: "Página web", software: "Software a medida", asistente: "Asistente de WhatsApp con IA", consultoria: "Consultoría" };
   var LIMITS = { nombre: 80, empresa: 100, email: 120, descripcionMin: 20, descripcionMax: 3000 };
   var EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
   var PHONE_RE = /^\+?[\d\s()-]{8,20}$/;

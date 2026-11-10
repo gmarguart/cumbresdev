@@ -1958,6 +1958,169 @@ main:focus {
   }
 }
 
+/* Servicio 03: asistente de WhatsApp con IA (tarjeta clara, foto a la izquierda) */
+.service-card--ia {
+  border-color: rgb(21 128 61 / 0.25);
+  background: linear-gradient(to bottom, rgb(236 253 243 / 0.8), #ffffff);
+}
+
+.service-card--ia:hover {
+  box-shadow: 0 24px 60px -30px rgb(21 128 61 / 0.45);
+}
+
+.service-card--ia .service-icon {
+  background: var(--whatsapp);
+}
+
+.service-card--ia .service-kicker {
+  color: var(--whatsapp);
+}
+
+.service-card--ia .check {
+  background: rgb(21 128 61 / 0.12);
+  color: var(--whatsapp);
+}
+
+.service-try {
+  margin-top: 1.75rem;
+  border-left: 3px solid var(--whatsapp);
+  padding-left: 0.875rem;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  font-weight: 500;
+  color: var(--navy-700);
+}
+
+.service-cta--duo {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  padding-top: 1.75rem;
+}
+
+/* Maqueta de chat en lugar de foto (sin el tinte azul de las fotos) */
+.chat-demo::before,
+.chat-demo::after {
+  display: none;
+}
+
+.chat-demo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: auto;
+  border-bottom: 1px solid rgb(21 128 61 / 0.2);
+  background:
+    radial-gradient(circle at 20% 15%, rgb(255 255 255 / 0.08), transparent 45%),
+    linear-gradient(160deg, #0b3d2a, var(--navy-950));
+  padding: 1.75rem 1.25rem;
+}
+
+.chat-window {
+  width: 100%;
+  max-width: 21rem;
+  overflow: hidden;
+  border-radius: 1.25rem;
+  background: #efe7dd;
+  box-shadow: 0 24px 48px -16px rgb(0 0 0 / 0.55);
+  transition: transform 0.7s var(--ease-out-soft);
+}
+
+.service-card:hover .chat-window {
+  transform: translateY(-4px);
+}
+
+.chat-top {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  background: #075e54;
+  padding: 0.75rem 1rem;
+  color: #ffffff;
+}
+
+.chat-avatar {
+  display: flex;
+  width: 2.25rem;
+  height: 2.25rem;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  background: rgb(255 255 255 / 0.18);
+}
+
+.chat-name {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.9rem;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.chat-name small {
+  font-size: 0.72rem;
+  font-weight: 400;
+  opacity: 0.8;
+}
+
+.chat-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 0.875rem;
+}
+
+.chat-msg {
+  position: relative;
+  max-width: 85%;
+  border-radius: 0.75rem;
+  padding: 0.5rem 0.75rem 1.1rem;
+  font-size: 0.82rem;
+  line-height: 1.4;
+  color: #111b21;
+  box-shadow: 0 1px 1px rgb(0 0 0 / 0.12);
+}
+
+.chat-msg--in {
+  align-self: flex-start;
+  border-top-left-radius: 0.2rem;
+  background: #ffffff;
+}
+
+.chat-msg--out {
+  align-self: flex-end;
+  border-top-right-radius: 0.2rem;
+  background: #d9fdd3;
+}
+
+.chat-time {
+  position: absolute;
+  right: 0.6rem;
+  bottom: 0.3rem;
+  font-size: 0.65rem;
+  color: #667781;
+}
+
+@media (min-width: 1024px) {
+  /* Abarca 7 filas: cabecera, título, descripción, público, lista, invitación y botones */
+  .service-card--ia .service-photo {
+    grid-row: 1 / span 7;
+    border-bottom: 0;
+    border-right: 1px solid rgb(21 128 61 / 0.2);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .chat-window {
+    transition: none;
+  }
+
+  .service-card:hover .chat-window {
+    transform: none;
+  }
+}
+
 /* 8. Forma de trabajar ---------------------------------------------------- */
 .benefits-bg {
   position: absolute;

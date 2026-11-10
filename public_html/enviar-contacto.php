@@ -124,6 +124,7 @@ if (rate_limited($ip)) {
 $types = [
     'web' => 'Página web',
     'software' => 'Software a medida',
+    'asistente' => 'Asistente de WhatsApp con IA',
     'consultoria' => 'Consultoría'
 ];
 
