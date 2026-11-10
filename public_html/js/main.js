@@ -4,7 +4,7 @@
  *  1. Año del pie de página
  *  2. Encabezado: fondo al hacer scroll, menú móvil y sección activa
  *  3. Carrusel principal
- *  4. Política de privacidad (diálogo)
+ *  4. Enlaces antiguos a la política de privacidad
  *  5. Formulario de contacto (envía a enviar-contacto.php)
  */
 (function () {
@@ -213,31 +213,11 @@
 
   render();
 
-  /* 4. Política de privacidad --------------------------------------------- */
-  var PRIVACY_HASH = "#politica-de-privacidad";
-  var privacyDialog = document.getElementById("privacy-dialog");
-
-  function openPrivacy() {
-    if (!privacyDialog.open) privacyDialog.showModal();
+  /* 4. Enlaces antiguos a la política de privacidad ------------------------ */
+  // La política ahora es una página propia; los enlaces viejos (#politica-de-privacidad) se redirigen.
+  if (window.location.hash === "#politica-de-privacidad") {
+    window.location.replace("privacidad.html");
   }
-
-  document.addEventListener("click", function (e) {
-    if (e.target.closest("[data-open-privacy]")) {
-      e.preventDefault();
-      openPrivacy();
-    }
-  });
-  // Cerrar al hacer clic en el fondo.
-  privacyDialog.addEventListener("click", function (e) {
-    if (e.target === privacyDialog) privacyDialog.close();
-  });
-  privacyDialog.addEventListener("close", function () {
-    if (window.location.hash === PRIVACY_HASH) history.replaceState(null, "", window.location.pathname);
-  });
-  window.addEventListener("hashchange", function () {
-    if (window.location.hash === PRIVACY_HASH) openPrivacy();
-  });
-  if (window.location.hash === PRIVACY_HASH) openPrivacy();
 
   /* 5. Formulario de contacto --------------------------------------------- */
   // enviar-contacto.php repite estas reglas en el servidor: si cambias una, actualiza ambas.
