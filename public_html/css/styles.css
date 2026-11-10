@@ -494,10 +494,6 @@ main:focus {
   gap: 0.5rem;
 }
 
-.header-cta {
-  display: none;
-}
-
 .menu-toggle {
   display: flex;
   width: 2.75rem;
@@ -564,12 +560,6 @@ main:focus {
   margin-top: 1rem;
   border-top: 1px solid var(--navy-100);
   padding-top: 1rem;
-}
-
-@media (min-width: 640px) {
-  .header-cta {
-    display: inline-flex;
-  }
 }
 
 @media (min-width: 1280px) {

@@ -51,7 +51,7 @@
   var navLinks = document.querySelectorAll("[data-nav]");
   var navIds = new Set(Array.prototype.map.call(navLinks, function (a) { return a.dataset.nav; }));
   // Todas las secciones (en orden del documento) más las tarjetas de servicio.
-  var tracked = Array.prototype.slice.call(document.querySelectorAll("main section[id], #paginas-web, #software"));
+  var tracked = Array.prototype.slice.call(document.querySelectorAll("main section[id], #paginas-web, #software, #asistente-whatsapp"));
   var order = tracked.map(function (el) { return el.id; });
   var visible = new Set();
 
@@ -71,8 +71,9 @@
         });
         if (visible.size === 0) return;
         // El elemento visible más específico (el último en el documento).
-        // Si ambas tarjetas de servicio se ven a la vez (escritorio), se marca "Servicios".
-        var current = visible.has("paginas-web") && visible.has("software")
+        // Si dos o más tarjetas de servicio se ven a la vez, se marca "Servicios".
+        var cardsVisible = ["paginas-web", "software", "asistente-whatsapp"].filter(function (id) { return visible.has(id); }).length;
+        var current = cardsVisible >= 2
           ? "servicios"
           : order.slice().reverse().find(function (id) { return visible.has(id); });
         // Secciones fuera del menú (beneficios, nosotros, FAQ) no marcan ningún enlace.
