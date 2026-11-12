@@ -89,14 +89,12 @@
   var slides = Array.prototype.slice.call(slider.querySelectorAll(".slide"));
   var dots = Array.prototype.slice.call(slider.querySelectorAll(".slider-dot"));
   var photos = Array.prototype.slice.call(slider.querySelectorAll(".hero-photo"));
-  var toggle = slider.querySelector(".slider-toggle");
   var live = slider.querySelector(".slider-live");
   var INTERVAL = Number(slider.dataset.interval) || 5000;
   var SWIPE_THRESHOLD = 48;
   var reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
   var index = 0;
-  var playPref = "auto"; // "auto" | "playing" | "paused"
   var hovered = false;
   var focusWithin = false;
   var timer = 0;
@@ -104,9 +102,9 @@
 
   slider.style.setProperty("--slider-interval", INTERVAL + "ms");
 
-  // Con "reducir movimiento" no hay rotación automática salvo que el usuario la active.
+  // Con "reducir movimiento" no hay rotación automática.
   function autoplay() {
-    return playPref === "playing" || (playPref === "auto" && !reducedMotion.matches);
+    return !reducedMotion.matches;
   }
 
   function isRunning() {
@@ -127,11 +125,6 @@
       if (i === index) dot.setAttribute("aria-current", "true");
       else dot.removeAttribute("aria-current");
     });
-
-    var playing = autoplay();
-    toggle.querySelector(".icon-pause").hidden = !playing;
-    toggle.querySelector(".icon-play").hidden = playing;
-    toggle.querySelector(".slider-toggle-text").textContent = playing ? "Pausar rotación" : "Reanudar rotación";
 
     // Anuncia el cambio solo cuando no hay rotación automática.
     live.setAttribute("aria-live", running ? "off" : "polite");
@@ -164,10 +157,6 @@
   slider.querySelector('[data-slider="next"]').addEventListener("click", next);
   dots.forEach(function (dot, i) {
     dot.addEventListener("click", function () { goTo(i); });
-  });
-  toggle.addEventListener("click", function () {
-    playPref = autoplay() ? "paused" : "playing";
-    render();
   });
 
   // Pausa con el puntero encima o con el foco dentro del carrusel.
@@ -228,7 +217,7 @@
   var submitButton = form.querySelector('[type="submit"]');
 
   var GENERIC_ERROR = "No pudimos enviar tu mensaje. Verifica tu conexión e inténtalo nuevamente.";
-  var FIELDS = ["nombre", "empresa", "email", "telefono", "tipo", "descripcion", "presupuesto", "plazo", "consentimiento"];
+  var FIELDS = ["nombre", "empresa", "email", "telefono", "tipo", "descripcion", "consentimiento"];
   var PROJECT_TYPES = { web: "Página web", software: "Software a medida", asistente: "Asistente de WhatsApp con IA", consultoria: "Consultoría" };
   var LIMITS = { nombre: 80, empresa: 100, email: 120, descripcionMin: 20, descripcionMax: 3000 };
   var EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
@@ -249,14 +238,8 @@
       telefono: f.telefono.value.trim(),
       tipo: f.tipo.value,
       descripcion: f.descripcion.value.trim(),
-      presupuesto: f.presupuesto.value,
-      plazo: f.plazo.value,
       consentimiento: f.consentimiento.checked
     };
-  }
-
-  function isOption(select, value) {
-    return Array.prototype.some.call(select.options, function (o) { return o.value === value; });
   }
 
   function validate(d) {
@@ -280,10 +263,6 @@
       errors.descripcion = "Cuéntanos un poco más (mínimo " + LIMITS.descripcionMin + " caracteres).";
     else if (d.descripcion.length > LIMITS.descripcionMax)
       errors.descripcion = "Máximo " + LIMITS.descripcionMax + " caracteres.";
-
-    if (d.presupuesto && !isOption(form.elements.presupuesto, d.presupuesto))
-      errors.presupuesto = "Selecciona una opción válida.";
-    if (d.plazo && !isOption(form.elements.plazo, d.plazo)) errors.plazo = "Selecciona una opción válida.";
 
     if (!d.consentimiento) errors.consentimiento = "Debes aceptar la política de privacidad para enviar el formulario.";
 
@@ -386,8 +365,6 @@
       telefono: data.telefono,
       tipo: data.tipo,
       descripcion: data.descripcion,
-      presupuesto: data.presupuesto,
-      plazo: data.plazo,
       consentimiento: data.consentimiento ? "1" : "",
       website: form.elements.website.value,
       startedAt: String(startedAt)

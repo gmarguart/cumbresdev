@@ -134,8 +134,6 @@ $email = single_line(post_value('email', 120));
 $phone = single_line(post_value('telefono', 20));
 $type = post_value('tipo', 20);
 $description = post_value('descripcion', 3000);
-$budget = single_line(post_value('presupuesto', 100));
-$timeline = single_line(post_value('plazo', 100));
 $consent = post_value('consentimiento', 5);
 
 $errors = [];
@@ -176,8 +174,6 @@ $body = implode("\n", [
     'Correo electrónico: ' . $email,
     'Teléfono: ' . ($phone !== '' ? $phone : 'No indicado'),
     'Tipo de proyecto: ' . $types[$type],
-    'Presupuesto estimado: ' . ($budget !== '' ? $budget : 'No indicado'),
-    'Plazo deseado: ' . ($timeline !== '' ? $timeline : 'No indicado'),
     'Consentimiento de privacidad: Aceptado',
     '',
     'Descripción:',

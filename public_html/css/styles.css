@@ -722,25 +722,11 @@ main:focus {
 }
 
 .slide-eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
   margin-bottom: 1rem;
-  border: 1px solid rgb(255 255 255 / 0.15);
-  border-radius: 9999px;
-  background: rgb(255 255 255 / 0.05);
-  padding: 0.25rem 0.75rem;
-  font-size: 0.875rem;
+  font-size: 0.9375rem;
   line-height: 1.25rem;
-  font-weight: 500;
+  font-weight: 600;
   color: var(--brand-200);
-}
-
-.slide-eyebrow-dot {
-  width: 0.375rem;
-  height: 0.375rem;
-  border-radius: 9999px;
-  background: var(--brand-400);
 }
 
 .slide-title {
@@ -844,26 +830,6 @@ main:focus {
 
 .hero.is-running .dot-progress {
   animation: progress var(--slider-interval, 5000ms) linear both;
-}
-
-.slider-toggle {
-  display: inline-flex;
-  height: 2.75rem;
-  align-items: center;
-  gap: 0.5rem;
-  margin-left: 0.25rem;
-  border-radius: 9999px;
-  padding-inline: 0.75rem;
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-  font-weight: 500;
-  color: var(--navy-200);
-  transition: background-color 0.15s, color 0.15s;
-}
-
-.slider-toggle:hover {
-  background: rgb(255 255 255 / 0.1);
-  color: #ffffff;
 }
 
 @media (min-width: 640px) {
@@ -2328,6 +2294,12 @@ main:focus {
   position: relative;
   display: grid;
   gap: 3rem;
+}
+
+/* Número de servicio sobre fondo oscuro, igual que en la tarjeta de software */
+.consulting-kicker {
+  margin-bottom: 1rem;
+  color: var(--brand-300);
 }
 
 .consulting-audience {
